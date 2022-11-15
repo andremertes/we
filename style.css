@@ -1,0 +1,253 @@
+@import "sunset-club";
+@font-face {
+    font-family: neonsans;
+    src: url("NeonSans-GOgRg.ttf");
+}
+
+body {
+    background: url("https://universelan.de/wp-content/uploads/2022/10/cropped-Ngc6188_Robertson_2000.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#wrapper {
+    background: rgba(100,100,100,50%);
+    min-height: 100%;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+.glowPink {
+    font-family: neonsans;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glowPink 1s ease-in-out infinite alternate;
+    -moz-animation: glowPink 1s ease-in-out infinite alternate;
+    animation: glowPink 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glowPink {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+.glowOrange {
+    font-family: neonsans;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glowOrange 1s ease-in-out infinite alternate;
+    -moz-animation: glowOrange 1s ease-in-out infinite alternate;
+    animation: glowOrange 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glowOrange {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e66000, 0 0 40px #e66000, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #e59d69, 0 0 40px #e59d69, 0 0 50px #e59d69, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+.glowBlue {
+    font-family: neonsans;
+     color: #fff;
+     text-align: center;
+     -webkit-animation: glowBlue 1s ease-in-out infinite alternate;
+     -moz-animation: glowBlue 1s ease-in-out infinite alternate;
+     animation: glowBlue 1s ease-in-out infinite alternate;
+ }
+
+@-webkit-keyframes glowBlue {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00a9e6, 0 0 40px #00a9e6, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #6cc3e3, 0 0 40px #6cc3e3, 0 0 50px #6cc3e3, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+.glowGreen {
+    font-family: neonsans;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glowGreen 1s ease-in-out infinite alternate;
+    -moz-animation: glowGreen 1s ease-in-out infinite alternate;
+    animation: glowGreen 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glowGreen {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0fe600, 0 0 40px #0fe600, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #77e16f, 0 0 40px #77e16f, 0 0 50px #77e16f, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        width: 100%;
+        font-size: 40px;
+    }
+    .h3 {
+        font-size: 70px;
+    }
+}
+
+@media screen and (min-width: 577px) {
+    .container {
+        width: 90%;
+        font-size: 40px;
+        margin-left: 5%;
+    }
+    .h3 {
+        font-size: 70px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .container {
+        width: 80%;
+        margin-left: 10%;
+        font-size: 40px;
+    }
+    .h3 {
+        font-size: 70px;
+    }
+    td {
+        border-bottom: 3px solid rgba(0, 169, 230, 15%);
+        padding: 20px;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .container {
+        width: 70%;
+        margin-left: 15%;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    td {
+        border-bottom: 3px solid rgba(0, 169, 230, 15%);
+        padding: 5px;
+        width: 50%;
+    }
+}
+
+.center {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.cardPink {
+    margin: 25px 25px 25px 25px;
+    padding: 25px 25px 25px 25px;
+    background: rgba(50, 50, 50, 40%);
+    border-radius: 5px;
+    outline: rgba(230, 0, 115, 40%);
+    outline-width: thin;
+    outline-style: dotted;
+    line-height: 50px;
+}
+
+.cardPink:hover {
+    margin: 25px 25px 25px 25px;
+    padding: 25px 25px 25px 25px;
+    background: rgba(230, 0, 115, 40%);
+    border-radius: 5px;
+}
+
+.cardOrange {
+    margin: 25px 25px 25px 25px;
+    padding: 25px 25px 25px 25px;
+    background: rgba(50, 50, 50, 40%);
+    border-radius: 5px;
+    outline: rgba(230, 96, 0, 40%);
+    outline-width: thin;
+    outline-style: dotted;
+    line-height: 50px;
+}
+
+.cardOrange:hover {
+    margin: 25px 25px 25px 25px;
+    padding: 25px 25px 25px 25px;
+    background: rgba(230, 96, 0, 40%);
+    border-radius: 5px;
+}
+
+.cardBlue {
+    margin: 25px 25px 25px 25px;
+    padding: 25px 25px 25px 25px;
+    background: rgba(50, 50, 50, 40%);
+    border-radius: 5px;
+    outline: rgba(0, 169, 230, 40%);
+    outline-width: thin;
+    outline-style: dotted;
+    line-height: 50px;
+}
+
+.cardBlue:hover {
+    margin: 25px 25px 25px 25px;
+    padding: 25px 25px 25px 25px;
+    background: rgba(0, 169, 230, 40%);
+    border-radius: 5px;
+}
+
+.cardGreen {
+    margin: 25px 25px 25px 25px;
+    padding: 25px 25px 25px 25px;
+    background: rgba(50, 50, 50, 40%);
+    border-radius: 5px;
+    outline: rgba(15, 230, 0, 40%);
+    outline-width: thin;
+    outline-style: dotted;
+    line-height: 50px;
+}
+
+.cardGreen:hover {
+    margin: 25px 25px 25px 25px;
+    padding: 25px 25px 25px 25px;
+    background: rgba(15, 230, 0, 40%);
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}

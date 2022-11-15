@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="300" >
+    <title>UNIverse LAN XXV - Dragons of Ara</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+<div id="wrapper">
+
+    <div class="container">
+        <div class="glowPink center">
+            <h1 class="glowOrange">UNIverse LAN XXV</h1><h2>Dragons of Ara</h2>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="cardBlue center">
+            <h3 class="glowBlue">Discord</h3>
+            <a class="glowGreen" href="https://fsrinfo.de" target="_blank">discord.gg</a>
+            <br/>Passwort: GarbageCollectorForTKR
+        </div>
+
+        <div class="cardOrange center">
+            <h3 class="glowBlue">Essen</h3>
+            Dank einer gro&szlig;z&uuml;gigen Spende von <a href="http://www.alta4.com/alta4-im-ueberblick.html" target="_blank" class="glowGreen">alta4</a> ist in diesem Semester das Essen gratis. Danke!
+            <br/><br/>
+            <h3 class="glowBlue">Getränke</h3>
+            <span id="essen"></span>
+        </div>
+
+        <div class="cardPink center">
+            <h3 class="glowBlue">Turniere</h3>
+            <span id="turniere"></span>
+        </div>
+
+        <div class="cardGreen center">
+            <h3 class="glowBlue">Minecraft Server</h3>
+            minecraft.lan
+        </div>
+
+        <div class="cardPink center">
+            <a class="glowGreen" href="https://universelan.de" target="_blank">universelan.de</a><br/>
+            <a class="glowGreen" href="https://fsrinfo.de" target="_blank">fsrinfo.de</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    let turniere = [
+        ['19:00', 'LOL 2:2'],
+        ['21:00', 'LOL 1:1'],
+        ['23:00', 'Smash'],
+        ['24:00', 'Siegerehrung']
+    ];
+
+    let essen = [
+        ['Bitburger', '1€'],
+        ['Redbull', '0€'],
+        ['Glühwein', '50ct'],
+        ['Cola', '50ct'],
+        ['Sprite', '50ct'],
+        ['Mirinda', '50ct'],
+        ['Mountain Dew', '50ct'],
+        ['Apfelschorle', '50ct'],
+        ['Astra', '50ct'],
+    ];
+
+    function createTimeTable(tableData) {
+        var table = document.createElement('table');
+        var tableBody = document.createElement('tbody');
+
+        let n = 1;
+        let m = 0;
+
+        tableData.forEach(function(rowData) {
+            var row = document.createElement('tr');
+
+            rowData.forEach(function(cellData) {
+                var cell = document.createElement('td');
+                cell.appendChild(document.createTextNode(cellData));
+                if (n%2 != 0) {
+
+                    var today = new Date();
+                    var now = today.getTime();
+
+                    var nowDateTime = today.toISOString();
+                    var nowDate = nowDateTime.split('T')[0];
+                    var hm = cellData
+                    var target = new Date(nowDate + 'T' + hm + ':00');
+                    var comp = target.getTime();
+
+                    if (comp < now) {
+                        cell.classList.add('glowPink');
+                        m++;
+                    } else {
+                        cell.classList.add('glowGreen');
+                    }
+
+                    cell.classList.add('text-right');
+                } else {
+                    cell.classList.add('text-left');
+                }
+                cell.id = cellData;
+                row.appendChild(cell);
+                n++;
+            });
+
+            tableBody.appendChild(row);
+        });
+
+        table.appendChild(tableBody);
+        document.getElementById('turniere').appendChild(table);
+
+        let k = 0;
+        while (m > 1) {
+            document.getElementById(turniere[k][0]).classList.remove('glowPink');
+            document.getElementById(turniere[k][0]).classList.add('glowGreen');
+            k++;
+            m--;
+        }
+
+    }
+
+    function createFoodTable(tableData) {
+        var table = document.createElement('table');
+        var tableBody = document.createElement('tbody');
+
+        let n = 1;
+
+        tableData.forEach(function(rowData) {
+            var row = document.createElement('tr');
+
+            rowData.forEach(function(cellData) {
+                var cell = document.createElement('td');
+                cell.appendChild(document.createTextNode(cellData));
+                if (n%2 != 0) {
+                    cell.classList.add('text-right');
+                } else {
+                    cell.classList.add('text-left');
+                }
+                cell.id = cellData;
+                row.appendChild(cell);
+                n++;
+            });
+
+            tableBody.appendChild(row);
+        });
+
+        table.appendChild(tableBody);
+        document.getElementById('essen').appendChild(table);
+    }
+
+    createTimeTable(turniere);
+    createFoodTable(essen);
+
+    setActiveTime();
+
+</script>
+
+</body>
+</html>
