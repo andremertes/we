@@ -12,9 +12,7 @@
     <body>
         <div class="container-fluid">
 
-            <div class="bg-light p-5">
-                <h1 class="display-6 text-center">Aufgabenplaner: Login</h1>
-            </div>
+            <?php $heading = "Aufgabenplaner: Login"; include('jumbotron.php'); ?>
 
             <div class="row pt-3">
 
@@ -50,7 +48,7 @@
                             </p>
 
                             <p>
-                                Da der Login Vorgang technisch noch nicht realisiert wurde: <a href="index.html" style="text-decoration: none">Überspringen</a>
+                                Da der Login Vorgang technisch noch nicht realisiert wurde: <a href="index.php" style="text-decoration: none">Überspringen</a>
                             </p>
 
                         </div>

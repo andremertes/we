@@ -12,27 +12,12 @@
     <body>
         <div class="container-fluid">
 
-            <header class="bg-light p-5">
-                <h1 class="display-6 text-center">Aufgabenplaner: Todos (Aktuelles Projekt)</h1>   <!--style="margin-left: 24%"-->
-            </header>
+            <?php $heading = "Aufgabenplaner: Todos (Aktuelles Projekt)"; include('jumbotron.php'); ?>
 
             <div class="row pt-3">
 
                 <!-- Menu -->
-                <nav class="col-lg-2 p-3">
-
-                    <ul class="list-group">
-                        <li class="list-group-item"><a href="login.html" class="text-decoration-none">Login</a></li>
-                        <li class="list-group-item"><a href="projekte.html" class="text-decoration-none">Projekte</a></li>
-                        <li class="list-group-item"><a href="index.html" class="text-decoration-none">Aktuelles Projekt</a></li>
-                        <!--ul-->
-                            <li class="list-group-item ms-4"><a href="reiter.html" class="text-decoration-none">Reiter</a></li>
-                            <li class="list-group-item ms-4"><a href="aufgaben.html" class="text-decoration-none">Aufgaben</a></li>
-                            <li class="list-group-item ms-4"><a href="personen.html" class="text-decoration-none">Mitglieder</a></li>
-                        <!--/ul-->
-                    </ul>
-
-                </nav>
+                <?php include('menu.php'); ?>
                 <main class="col">
 
                     <!-- Karten -->
