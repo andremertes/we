@@ -1,3 +1,23 @@
+<?php
+    $reiter = array(
+        array(
+            'id' => '0',
+            'name' => 'ToDo',
+            'beschreibung' => 'Dinge, die erledigt werden müssen'
+        ),
+        array(
+            'id' => '1',
+            'name' => 'Erledigt',
+            'beschreibung' => 'Dinge, die erledigt sind'
+        ),
+        array(
+            'id' => '2',
+            'name' => 'Verschoben',
+            'beschreibung' => 'Dinge, die später erledigt werden'
+        )
+    );
+?>
+
 <!DOCTYPE html>
 <html lang="de">
     <head>
@@ -34,30 +54,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>ToDo</td>
-                                    <td>Dinge, die erledigt werden müssen</td>
-                                    <td class="text-right">
-                                        <button type="button" class="btn btn-link"><i class="far fa-edit"></i></button>
-                                        <button type="button" class="btn btn-link"><i class="far fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Erledigt</td>
-                                    <td>Dinge, die erledigt sind</td>
-                                    <td class="text-right">
-                                        <button type="button" class="btn btn-link"><i class="far fa-edit"></i></button>
-                                        <button type="button" class="btn btn-link"><i class="far fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Verschoben</td>
-                                    <td>Dinge, die später erledigt werden</td>
-                                    <td class="text-right">
-                                        <button type="button" class="btn btn-link"><i class="far fa-edit"></i></button>
-                                        <button type="button" class="btn btn-link"><i class="far fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
+
+                                <?php if (isset($reiter)): foreach ($reiter as $item): ?>
+                                    <tr>
+                                        <td><?= isset($item['name']) ? $item['name'] : '' ?></td>
+                                        <td><?= isset($item['beschreibung']) ? $item['beschreibung'] : '' ?></td>
+                                        <td class="text-right">
+                                            <button type="submit" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-edit"></i></button>
+                                            <button type="submit" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; endif; ?>
+
                                 </tbody>
                             </table>
 

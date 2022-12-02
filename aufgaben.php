@@ -1,3 +1,43 @@
+<?php
+    $aufgaben = array(
+        array(
+            'id' => '0',
+            'bezeichnung' => 'HTML Datei erstellen',
+            'beschreibung' => 'HTML Datei erstellen',
+            'reiter' => 'ToDo',
+            'zustaendig' => 'Max Mustermann'
+        ),
+        array(
+            'id' => '1',
+            'bezeichnung' => 'CSS Datei erstellen',
+            'beschreibung' => 'CSS Datei erstellen',
+            'reiter' => 'ToDo',
+            'zustaendig' => 'Max Mustermann'
+        ),
+        array(
+            'id' => '2',
+            'bezeichnung' => 'PC eingeschaltet',
+            'beschreibung' => 'PC einschalten',
+            'reiter' => 'Erledigt',
+            'zustaendig' => 'Max Mustermann'
+        ),
+        array(
+            'id' => '3',
+            'bezeichnung' => 'Kaffee trinken',
+            'beschreibung' => 'Kaffee trinken',
+            'reiter' => 'Erledigt',
+            'zustaendig' => 'Petra Müller'
+        ),
+        array(
+            'id' => '4',
+            'bezeichnung' => 'Für die Uni lernen',
+            'beschreibung' => 'Für die Uni lernen',
+            'reiter' => 'Verschoben',
+            'zustaendig' => 'Max Mustermann'
+        )
+    );
+?>
+
 <!DOCTYPE html>
 <html lang="de">
     <head>
@@ -36,56 +76,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>HTML Datei erstellen</td>
-                                    <td>HTML Datei erstellen </td>
-                                    <td>ToDo</td>
-                                    <td>Max Mustermann</td>
-                                    <td class="text-right">
-                                        <button type="button" class="btn btn-link"><i class="far fa-edit"></i></button>
-                                        <button type="button" class="btn btn-link"><i class="far fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>CSS Datei erstellen</td>
-                                    <td>CSS Datei erstellen</td>
-                                    <td>ToDo</td>
-                                    <td>Max Mustermann</td>
-                                    <td class="text-right">
-                                        <button type="button" class="btn btn-link"><i class="far fa-edit"></i></button>
-                                        <button type="button" class="btn btn-link"><i class="far fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>PC eingeschaltet</td>
-                                    <td>PC einschalten</td>
-                                    <td>Erledigt</td>
-                                    <td>Max Mustermann</td>
-                                    <td class="text-right">
-                                        <button type="button" class="btn btn-link"><i class="far fa-edit"></i></button>
-                                        <button type="button" class="btn btn-link"><i class="far fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Kaffee trinken</td>
-                                    <td>Kaffee trinken</td>
-                                    <td>Erledigt</td>
-                                    <td>Petra Müller</td>
-                                    <td class="text-right">
-                                        <button type="button" class="btn btn-link"><i class="far fa-edit"></i></button>
-                                        <button type="button" class="btn btn-link"><i class="far fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Für die Uni lernen</td>
-                                    <td>Für die Uni lernen</td>
-                                    <td>Verschoben</td>
-                                    <td>Max Mustermann</td>
-                                    <td class="text-right">
-                                        <button type="button" class="btn btn-link"><i class="far fa-edit"></i></button>
-                                        <button type="button" class="btn btn-link"><i class="far fa-trash-alt"></i></button>
-                                    </td>
-                                </tr>
+
+                                <?php if (isset($aufgaben)): foreach ($aufgaben as $item): ?>
+                                    <tr>
+                                        <td><?= isset($item['bezeichnung']) ? $item['bezeichnung'] : '' ?></td>
+                                        <td><?= isset($item['beschreibung']) ? $item['beschreibung'] : '' ?></td>
+                                        <td><?= isset($item['reiter']) ? $item['reiter'] : '' ?></td>
+                                        <td><?= isset($item['zustaendig']) ? $item['zustaendig'] : '' ?></td>
+                                        <td class="text-right">
+                                            <button type="submit" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-edit"></i></button>
+                                            <button type="submit" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; endif; ?>
+
                                 </tbody>
                             </table>
 

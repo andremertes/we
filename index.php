@@ -1,3 +1,32 @@
+<?php
+    $todo = array(
+        array(
+            'bezeichnung' => 'HTML Datei erstellen',
+            'zustaendig' => 'Max Mustermann',
+        ),
+        array(
+            'bezeichnung' => 'CSS Datei erstellen',
+            'zustaendig' => 'Max Mustermann',
+        )
+    );
+    $erledigt = array(
+        array(
+            'bezeichnung' => 'PC eingeschaltet',
+            'zustaendig' => 'Petra Müller',
+        ),
+        array(
+            'bezeichnung' => 'Kaffee trinken',
+            'zustaendig' => 'Petra Müller',
+        )
+    );
+    $verschoben = array(
+        array(
+            'bezeichnung' => 'Für die Uni lernen',
+            'zustaendig' => 'Max Mustermann',
+            )
+    )
+?>
+
 <!DOCTYPE html>
 <html lang="de">
     <head>
@@ -28,8 +57,9 @@
                             <div class="card">
                                 <div class="card-header">ToDo:</div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">HTML Datei erstellen (Max Mustermann)</li>
-                                    <li class="list-group-item">CSS Datei erstellen (Max Mustermann)</li>
+                                    <?php if(isset($todo)): foreach ($todo as $item): ?>
+                                        <li class="list-group-item"><?= isset($item['bezeichnung']) && isset($item['zustaendig']) ? $item['bezeichnung'].' ('.$item['zustaendig'].')' : (isset($item['bezeichnung']) ? $item['bezeichnung'] : '') ?></li>
+                                    <?php endforeach; endif; ?>
                                 </ul>
                             </div>
                         </div>
@@ -39,8 +69,9 @@
                             <div class="card">
                                 <div class="card-header">Erledigt:</div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">PC eingeschaltet (Petra Müller)</li>
-                                    <li class="list-group-item">Kaffee trinken (Petra Müller)</li>
+                                    <?php if(isset($erledigt)): foreach ($erledigt as $item): ?>
+                                        <li class="list-group-item"><?= isset($item['bezeichnung']) && isset($item['zustaendig']) ? $item['bezeichnung'].' ('.$item['zustaendig'].')' : (isset($item['bezeichnung']) ? $item['bezeichnung'] : '') ?></li>
+                                    <?php endforeach; endif; ?>
                                 </ul>
                             </div>
                         </div>
@@ -50,7 +81,9 @@
                             <div class="card">
                                 <div class="card-header">Verschoben:</div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Für die Uni lernen (Max Mustermann)</li>
+                                    <?php if(isset($verschoben)): foreach ($verschoben as $item): ?>
+                                        <li class="list-group-item"><?= isset($item['bezeichnung']) && isset($item['zustaendig']) ? $item['bezeichnung'].' ('.$item['zustaendig'].')' : (isset($item['bezeichnung']) ? $item['bezeichnung'] : '') ?></li>
+                                    <?php endforeach; endif; ?>
                                 </ul>
                             </div>
                         </div>
