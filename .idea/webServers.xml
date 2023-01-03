@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7aa04769-ea54-4efc-b315-f4b0122094be" name="mamp" url="http://localhost">
+        <fileTransfer mountedRoot="/Applications/MAMP/htdocs/Uni/we" accessType="MOUNT" port="0" />
+      </webServer>
+      <webServer id="999324bc-0f3f-493b-8994-ec257091c722" name="strato" url="https://amertes.com">
+        <fileTransfer rootFolder="/var/www/amertes.com/public_html" accessType="SFTP" host="andremertes.com" port="22" sshConfigId="62977ebf-111a-4cd4-82c1-d2d336ec50a4" sshConfig="andremertes@andremertes.com:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
