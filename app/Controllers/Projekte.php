@@ -7,6 +7,8 @@ class Projekte extends BaseController
     public function index()
     {
 
+        //var_dump($_SESSION);
+
         $data['heading'] = "Aufgabenplaner: Projekte";
 
         echo view('templates/head', $data);

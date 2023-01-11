@@ -3,14 +3,16 @@
     <div class="row">
 
         <!-- Form -->
-        <form class="form-group">
+        <form class="form-group" method="post" action="mitglieder">
+
+            <a href="#"><button class="btn btn-primary mb-2" type="submit" value="button" name="btnNeu" id="btnNeu" value="Neu"><i class="fas fa-plus-square"></i>&nbsp;Neu</button></a>
 
             <table class="table table-hover">
                 <thead>
                 <tr class="table-light">
                     <th scope="col">Name</th>
                     <th scope="col">E-Mail</th>
-                    <th scope="col">In Projekt</th>
+                    <!--th scope="col">In Projekt</th-->
                     <th scope="col"></th>
                 </tr>
                 </thead>
@@ -18,12 +20,14 @@
 
                 <?php if (isset($mitglieder)): foreach ($mitglieder as $item): ?>
                     <tr>
-                        <td><?= isset($item['name']) ? $item['name'] : '' ?></td>
+                        <td><?= isset($item['username']) ? $item['username'] : '' ?></td>
                         <td><?= isset($item['email']) ? $item['email'] : '' ?></td>
-                        <td><?php if(isset($item['inProjekt']) && $item['inProjekt']){$item['state'] = 'checked';} ?><?= isset($item['inProjekt']) ? '<input class="form-check-input" type="checkbox"'.$item['state'].'>' : '' ?></td>
+                        <!--td><?php //if(isset($item['inProjekt']) && $item['inProjekt']){$item['state'] = 'checked';} ?><?//= isset($item['inProjekt']) ? '<input class="form-check-input" type="checkbox"'.$item['state'].'>' : '' ?></td-->
                         <td class="text-right">
-                            <button type="submit" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-edit"></i></button>
-                            <button type="submit" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-trash-alt"></i></button>
+                            <button type="submit" name="btnBearbeiten" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-edit"></i></button>
+                            <?php if ($sessionuserid != $item['id']) {
+                                echo '<button type="submit" name="btnLoeschen" class="btn btn-link" value="'.$item['id'].'"><i class="far fa-trash-alt"></i></button>';
+                            } ?>
                         </td>
                     </tr>
                 <?php endforeach; endif; ?>

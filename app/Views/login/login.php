@@ -8,7 +8,7 @@
         <!-- Login Form -->
         <div class="col p-3">
 
-            <form>
+            <form method="post" action="login">
                 <div class="mb-3">
                     <label for="email" class="form-label">E-Mail Adresse</label>
                     <input type="email" class="form-control" id="email" name="email" tabindex="1" placeholder="E-Mail Adresse eingeben">
@@ -24,13 +24,13 @@
                 <button type="submit" class="btn btn-primary" id="loginSubmit" name="loginSubmit">Einloggen</button>
             </form>
 
-            <p>
+            <!--p>
                 Noch nicht registriert? <a href="" style="text-decoration: none">Registrierung</a>
             </p>
 
             <p>
-                Da der Login Vorgang technisch noch nicht realisiert wurde: <a href="<?= base_url() ?>/AktuellesProjekt" style="text-decoration: none">Überspringen</a>
-            </p>
+                Da der Login Vorgang technisch noch nicht realisiert wurde: <a href="<?//= base_url() ?>/AktuellesProjekt" style="text-decoration: none">Überspringen</a>
+            </p-->
 
         </div>
 

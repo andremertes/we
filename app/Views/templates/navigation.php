@@ -1,7 +1,7 @@
 <nav class="col-lg-2 p-3">
 
     <ul class="list-group">
-        <li class="list-group-item"><a href="<?= base_url() ?>/login" class="text-decoration-none">Login</a></li>
+        <li class="list-group-item"><a href="<?= base_url() ?>/Login/logout" class="text-decoration-none text-danger">Logout</a></li>
         <li class="list-group-item"><a href="<?= base_url() ?>/projekte" class="text-decoration-none">Projekte</a></li>
         <li class="list-group-item"><a href="<?= base_url() ?>/AktuellesProjekt" class="text-decoration-none">Aktuelles Projekt</a></li>
         <!--ul-->
